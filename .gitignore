@@ -1,0 +1,25 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# --- Virtual Environment ---
+.venv/
+env/
+venv/
+
+# --- dotenv files (secrets) ---
+.env
+*.env
+
+# --- IDE / Editor stuff ---
+.vscode/
+.idea/
+*.swp
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
