@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>📄 Chat with PDF</h2>
+
+  <!-- Upload PDF -->
+  <div class="upload-section">
+    <input type="file" (change)="onFileSelected($event)" accept=".pdf" />
+    <button (click)="uploadPDF()" [disabled]="!selectedFile || isUploading">
+      {{ isUploading ? "Uploading..." : "Upload PDF" }}
+    </button>
+  </div>
+
+  <hr />
+
+  <!-- Ask Question -->
+  <div class="question-section">
+    <input
+      type="text"
+      [(ngModel)]="question"
+      placeholder="Ask a question..."
+      (keyup.enter)="askQuestion()"
+    />
+    <button (click)="askQuestion()" [disabled]="!question.trim() || isAsking">
+      {{ isAsking ? "Asking..." : "Ask" }}
+    </button>
+  </div>
+
+  <div class="answer-section" *ngIf="answer">
+    <h3>Answer:</h3>
+    <p>{{ answer }}</p>
+  </div>
+</div>
